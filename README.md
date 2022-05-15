@@ -19,4 +19,4 @@ exercice 9 - animation 3D : https://codepen.io/AngelinaRiet/pen/abqBePr
 
 exercice 10 - animation icônes : https://codepen.io/AngelinaRiet/pen/xxYRvev
 
-exercice 11 : animation SVG : https://codepen.io/AngelinaRiet/pen/KKQaPPB
+exercice 11 - animation SVG : https://codepen.io/AngelinaRiet/pen/KKQaPPB
