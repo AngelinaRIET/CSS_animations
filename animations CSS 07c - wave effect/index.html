@@ -1,0 +1,239 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" href="assets/styles.css">
+        <title>Animation CSS - Exercice 8 - Surfer sur la vague</title>
+        <style>
+            /* Zone de travail */
+            #result {
+                position: relative;
+                height: 300px;
+                border: 1px dashed #ccc;     
+                background-color: rgba(7, 23, 117, 0.2);         
+            }
+
+            /* Ajoutez les règles #keyframes ici */
+            @keyframes wave {
+                from {
+                    transform: scaleY(0);
+                    background-color: rgb(28, 89, 168);
+                }
+                to {
+                    transform: scaleY(1);
+                    background-color: rgb(134, 201, 221);
+                }
+            }
+
+            /* L'effet de vague est réalisé avec un grand nombre de divs */
+            /* Toutes ces divs partagent des propriétés communes */
+            .box{
+                /* propriétés communes à toutes les box*/
+                width:calc(100% / 22 + 1px);
+                height: 100%;
+                background-color: rgb(28, 89, 168);
+                position: absolute;
+                left:0; 
+                bottom:0;      
+                /* Faut-il préciser des informations d'animation communes ici ??? */
+                /* Peut-être... */
+                /* ... ou peut-être pas :P */
+                transform: scaleY(0);
+                animation-name: wave;
+                animation-duration: 1s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+                animation-timing-function: ease-in-out;
+                transform-origin: bottom;      
+
+                
+            }
+            #animated_box1{
+                left:0;           
+                /* Ajoutez les options d'animation de la div ici */
+                animation-delay: .0s;
+                
+            }
+            #animated_box2{
+                left:calc(100% / 22);            
+                /* Ajoutez les options d'animation de la div ici */
+                animation-delay: .1s;
+            }            
+            #animated_box3{
+                left:calc(2 * 100% / 22);         
+                /* Ajoutez les options d'animation de la div ici */
+                animation-delay: .2s;
+            }            
+            #animated_box4{
+                left:calc(3 * 100% / 22);            
+                /* Ajoutez les options d'animation de la div ici */
+                animation-delay: .3s;
+            }            
+            #animated_box5{
+                left:calc(4 * 100% / 22);            
+                /* Ajoutez les options d'animation de la div ici */
+                animation-delay: .4s;
+            }            
+            #animated_box6{
+                left:calc(5 * 100% / 22);            
+                /* Ajoutez les options d'animation de la div ici */
+                animation-delay: .5s;
+            }    
+            #animated_box7{
+                left:calc(6 * 100% / 22);            
+                /* Ajoutez les options d'animation de la div ici */
+                animation-delay: .6s;
+            }            
+            #animated_box8{
+                left:calc(7 * 100% / 22);            
+                /* Ajoutez les options d'animation de la div ici */
+                animation-delay: .7s;
+            }            
+            #animated_box9{
+                left:calc(8 * 100% / 22);            
+                /* Ajoutez les options d'animation de la div ici */
+                animation-delay: .8s;
+            }            
+            #animated_box10{
+                left:calc(9 * 100% / 22);            
+                /* Ajoutez les options d'animation de la div ici */
+                animation-delay: .9s;
+            }            
+            #animated_box11{
+                left:calc(10 * 100% / 22);            
+                /* Ajoutez les options d'animation de la div ici */
+                animation-delay: 1.0s;
+            }                       
+            #animated_box12{
+                left:calc(11 * 100% / 22);            
+                /* Ajoutez les options d'animation de la div ici */
+                animation-delay: 1.1s;
+            }          
+            #animated_box13{
+                left:calc(12 * 100% / 22);            
+                /* Ajoutez les options d'animation de la div ici */
+                animation-delay: 1.2s;
+            }            
+            #animated_box14{
+                left:calc(13 * 100% / 22);            
+                /* Ajoutez les options d'animation de la div ici */
+                animation-delay: 1.3s;
+            }            
+            #animated_box15{
+                left:calc(14 * 100% / 22);            
+                /* Ajoutez les options d'animation de la div ici */
+                animation-delay: 1.4s;
+            }            
+            #animated_box16{
+                left:calc(15 * 100% / 22);            
+                /* Ajoutez les options d'animation de la div ici */
+                animation-delay: 1.5s;
+            }    
+            #animated_box17{
+                left:calc(16 * 100% / 22);           
+                /* Ajoutez les options d'animation de la div ici */
+                animation-delay: 1.6s;
+            }            
+            #animated_box18{
+                left:calc(17 * 100% / 22);            
+                /* Ajoutez les options d'animation de la div ici */
+                animation-delay: 1.7s;
+            }            
+            #animated_box19{
+                left:calc(18 * 100% / 22);            
+                /* Ajoutez les options d'animation de la div ici */
+                animation-delay: 1.8s;
+            }            
+            #animated_box20{
+                left:calc(19 * 100% / 22);            
+                /* Ajoutez les options d'animation de la div ici */
+                animation-delay: 1.9s;
+            }            
+            #animated_box21{
+                left:calc(20 * 100% / 22);            
+                /* Ajoutez les options d'animation de la div ici */
+                animation-delay: 2.0s;
+            }                       
+            #animated_box22{
+                left:calc(21 * 100% / 22);            
+                /* Ajoutez les options d'animation de la div ici */
+                animation-delay: 2.1s;
+            }                          
+        </style>
+    </head>
+    <body>
+        <section class="container">
+
+            <h1>Effet de vague</h1>
+            <p>
+                Vous allez devoir réaliser une animation représentant ceci : 
+            </p>
+            <img src="wave.png"/>
+            <p>
+                Un effet de vague animé ! 
+            </p>            
+            <div id="result">
+                <div id="animated_box1" class="box"> </div>
+                <div id="animated_box2" class="box"> </div>
+                <div id="animated_box3" class="box"> </div>
+                <div id="animated_box4" class="box"> </div>
+                <div id="animated_box5" class="box"> </div>
+                <div id="animated_box6" class="box"> </div>
+                <div id="animated_box7" class="box"> </div>
+                <div id="animated_box8" class="box"> </div>
+                <div id="animated_box9" class="box"> </div>                
+                <div id="animated_box10" class="box"> </div>
+                <div id="animated_box11" class="box"> </div>
+                <div id="animated_box12" class="box"> </div>
+                <div id="animated_box13" class="box"> </div>
+                <div id="animated_box14" class="box"> </div>
+                <div id="animated_box15" class="box"> </div>
+                <div id="animated_box16" class="box"> </div>
+                <div id="animated_box17" class="box"> </div>
+                <div id="animated_box18" class="box"> </div>
+                <div id="animated_box19" class="box"> </div>                
+                <div id="animated_box20" class="box"> </div>
+                <div id="animated_box21" class="box"> </div>
+                <div id="animated_box22" class="box"> </div>        
+            </div>            
+            <p>
+                Le bloc bleu que vous voyez ci-dessus est en fait un ensemble de 22 divs collées les unes contre les autres, toutes semblables à l'exception de leur propriété <code class="pr">left</code> qui décale chaque div légèrement par rapport à la précédente.</p>
+                <p>Une classe <code class="sl">.box</code> est disponible pour les propriétés communes à toutes les divs et chacune possède son propre id <code class="sl">#animated_box1"</code>, <code class="sl">#animated_box2"</code>, <code class="sl">#animated_box3"</code>...
+            </p>
+            <hr>
+            <h2>Comment faire</h2>
+            <p>
+                Commencez déjà par écraser toutes vos divs avec un <code class="pr">transform:</code><code class="fc">scale...</code> de manière à ce que plus aucune ne soit visible.
+            </p>
+            <p>
+                Puis créez votre animation pour jouer avec la hauteur de la div <code class="sl">#animated_box1</code>, 
+                le but étant de tester votre animation avec une seule div à la fois dans un premier temps pour ne pas vous embrouiller l'esprit avec trop de divs d'un coup.</p>
+                <p>Pensez bien à attacher le bas de la div avec la propriété <code class="pr">transform-origin</code>. En effet, pour réussir votre effet de vague, il faut que ce soit la partie haute de la div qui bouge, et non la partie basse.
+            </p>
+            <p>Par défaut la div utilise la couleur <code class="fc">rgb(28, 89, 168)</code>. Il faut également que votre animation change cette couleur pour <code class="fc">rgb(134, 201, 221)</code> lorsque la vague est au plus haut</p>
+            <p>Une fois que cela marche avec votre première div, appliquez cette animation à toutes vos divs (soyez malin).</p>
+            <p>À ce stade, l'animation fonctionne, mais toutes les divs bougent au même rythme, on n'obtient donc pas l'effet vague voulu.</p>
+            <hr>
+            <h2>Décalage de l'animation</h2>
+            <p>
+                L'astuce ici est en fait d'appliquer exactement la même animation à toutes les divs mais avec un léger décalage d'un dizième de seconde. <br>
+                Pour cela on utilise la propriété CSS <code class="pr">animation-delay</code> comme suit :
+            </p>
+            <pre class="code">
+                <code class="css">
+            ...
+            <span class="pr">animation-delay:</span> <span class="unit">délai en sec</span>;
+            ...
+                </code>
+            </pre>
+            <p>
+                En appliquant la même animation mais avec un délai de plus en plus grand à chaque div, vous obtiendrez l'effet de vague voulu.<br>
+                Pensez à essayer plusieur type d'animation pour obtenir des vagues différentes et trouver celle qui vous convient le plus.<br>
+            </p>
+            <hr>
+            <h2>Forme d'onde</h2>
+            <p>
+                À ce stade, vos divs devraient s'animer correctement avec un léger décalage dans le temps. Faites des essais pour trouver le bon type d'animation (<code>linear</code>, <code>ease</code>...), pour obtenir le meilleur effet possible.
+            </p>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG - let's animate</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section id="load">
+        <svg height="100">
+            <rect height="10" fill="cadetblue">
+                <animate attributeType="CSS" attributeName="width" from="1" to="100%" dur="10s" fill="freeze" />
+            </rect>
+            <text font-family="sans-serif" y="30" x="10" fill="cadetblue">En cours de chargement
+                <animate attributeType="CSS" attributeName="opacity" from="1" to="0" dur="10s" values="1; 1;0"
+                    keyTimes="0; 0.9; 1" fill="freeze" />
+            </text>
+        </svg>
+    </section>
+
+    <section class="container" id="click">
+        <h2>2. Animer un cercle au clic</h2>
+        <h3>Merci de cliquer sur le cercle pour lancer l'animation</h3>
+        <p>L'animation dure 3 secondes et se déclenche au clic. A la fin, le cercle revient en position initiale.</p>
+        <svg class="border" height="120" widht="100%">
+            <circle cx="40" cy="60" r="20">
+                <animate attributeName="cx" from="40" to="calc(100% - 40px)" dur="3s" begin="click" />
+            </circle>
+        </svg>
+
+        <h3>2.bonus - Répéter l'animation</h3>
+        <p>L'animation se répète indéfiniment.</p>
+        <svg class="border" height="120">
+            <circle cx="40" cy="60" r="20">
+                <animate attributeName="cx" from="40" to="calc(100% - 40px)" dur="3s" begin="click"
+                    repeatCount="indefinite" />
+            </circle>
+        </svg>
+    </section>
+    <section class="container" id="planet">
+        <h2>3. Battement de ❤️</h2>
+        <p>Ce coeur a été dessiné grâce à l'outil Coeur d'Affinity Designer</p>
+        <svg class="" height="150">
+            <g>
+                <path transform-origin="33px 30px" fill="#870707"
+                    d="M50.286,30.124C57.379,17.378 71.566,17.378 78.659,23.751C85.753,30.124 85.753,42.87 78.659,55.616C73.694,65.175 60.926,74.735 50.286,81.108C39.645,74.735 26.877,65.175 21.912,55.616C14.818,42.87 14.818,30.124 21.912,23.751C29.005,17.378 43.192,17.378 50.286,30.124Z">
+                    <animateTransform attributeName="transform" type="scale" dur="1s"
+                        values="1.5;1.3; 1.35; 1.20;1.5; 1.5" keyTimes="0;0.2;0.35;0.5;0.75;1"
+                        repeatCount="indefinite" />
+                </path>
+            </g>
+        </svg>
+    </section>
+
+    <section class="container">
+        <h2>4. Chemin</h2>
+        <svg class="border auto" height="200" width="500">
+            <path d="M0,195 h495 V5 H10,5 l0,195" stroke="black" stroke-width="10px" fill="none" stroke-dasharray="1400"
+                stroke-dashoffset="1400">
+                <animate attributeName="stroke-dashoffset" from="1400" to="0" dur="5s" repeatCount="indefinite" />
+            </path>
+        </svg>
+    </section>
+
+    <section class="container">
+        <h2>5. Positionner du texte sur un tracé</h2>
+        <p>Le tracé apparait ici en gris, l'objectif étant à terme de le rendre transparent afin de n'avoir que le texte
+            apparaissant.</p>
+        <svg height="250">
+            <path id="ligne"
+                d="M29.729,199.463C29.729,199.463 67.895,136.425 138.002,134.207C208.109,131.989 242.419,191.404 342.662,195.04C442.904,198.676 462.374,160.534 462.374,160.534"
+                fill="none" stroke="lightgrey" />
+            <text>
+                <textpath xlink:href="#ligne" font-size="20px">
+                    Ne rêve pas ta vie mais vis tes rêves. — Bernard Asleyr
+                </textpath>
+            </text>
+        </svg>
+
+        <h3>5.bonus - animer le texte</h3>
+        <svg height="250">
+            <path id="ligne"
+                d="M29.729,199.463C29.729,199.463 67.895,136.425 138.002,134.207C208.109,131.989 242.419,191.404 342.662,195.04C442.904,198.676 462.374,160.534 462.374,160.534"
+                fill="none" stroke="none" />
+            <text>
+                <textpath xlink:href="#ligne" font-size="20px">
+                    Ne rêve pas ta vie mais vis tes rêves. — Bernard Asleyr
+                    <animate attributeName="startOffset" from="0%" to="100%" dur="5s" repeatCount="indefinite" />
+                </textpath>
+            </text>
+        </svg>
+    </section>
+
+</body>
+
+</html>

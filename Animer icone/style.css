@@ -1,0 +1,133 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+img,
+svg {
+  margin: 5px 15px;
+  max-width: 80px;
+}
+
+small {
+  background: rgb(241, 241, 241);
+  padding: 3px 5px;
+  border-radius: 3px;
+}
+
+/******************************************
+*          Attribution des animations
+*******************************************/
+.move-y {
+  animation: moveY 1s infinite;
+}
+
+.distortion-y {
+  transform-origin: center 90%;
+  animation: distortionY 3s infinite;
+}
+
+.rotate-360 {
+  transform-origin: center;
+  animation: rotate360 3s linear infinite;
+}
+
+.compress-x {
+  transform-origin: 35%;
+  animation: compressX 1s infinite;
+}
+
+.delay-03 {
+  animation-delay: 0.3s;
+}
+
+.badminton {
+  transform-origin: center;
+  animation: serve 1s linear infinite;
+}
+
+/******************************************
+*           KEYFRAMES - animations
+*******************************************/
+
+/* Service de volant badminton */
+@keyframes serve {
+  from {
+    transform: translate(50%, 100%) rotate(120deg) scale(0.4);
+  }
+
+  70% {
+    transform: translate(20%, 0) scale(0.6) rotate(30deg);
+  }
+
+  75% {
+    transform: translate(15%, 0) scale(0.65) rotate(25deg);
+  }
+
+  80% {
+    transform: translate(10%, 0) scale(0.7) rotate(20deg);
+  }
+
+  to {
+    transform: translate(0, 0) rotate(0) scale(0.8);
+  }
+}
+
+/* Retréci sur l'axe horizontal */
+@keyframes compressX {
+  from {
+    transform: scaleX(0.2);
+  }
+
+  70% {
+    transform: scaleX(1);
+  }
+
+  to {
+    transform: scaleX(0.2);
+  }
+}
+
+/* Déplace de haut en bas */
+@keyframes moveY {
+  from {
+    transform: translateY(0);
+  }
+
+  20% {
+    transform: translateY(-1px);
+  }
+
+  90% {
+    transform: translateY(6px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Déforme sur l'axe Y */
+@keyframes distortionY {
+  from {
+    transform: scaleY(0.6);
+  }
+
+  65% {
+    transform: scaleY(1.2);
+  }
+
+  to {
+    transform: scaleY(0.6);
+  }
+}
+
+/* Rotation de 360deg */
+@keyframes rotate360 {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

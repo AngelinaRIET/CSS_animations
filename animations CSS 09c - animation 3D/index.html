@@ -1,0 +1,125 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" href="assets/styles.css">
+        <title>Animation CSS - Exercice 9 - Kronos</title>
+        <style>
+            /* Zone de travail */
+            #result {
+                position: relative;
+                height: 500px;
+                border: 1px dashed #ccc;     
+                background-color: rgba(7, 23, 117, 0.2);     
+                perspective: 500px;    
+            }
+
+            /* Couleurs pour chacune des faces du cube */
+            .face-front  { background-color: lightcoral; }
+            .face-right  { background-color: lightblue; }
+            .face-back   { background-color: lightgreen; }
+            .face-left   { background-color: yellow; }
+            .face-top    { background-color: lightslategray; }
+            .face-bottom { background-color: blueviolet; }
+
+            /* Etape 1 */
+            .face {
+                width: 200px;
+                height: 200px;
+                line-height: 200px;
+                text-align: center;
+                font-size: 40px;
+                color: black;
+                opacity: .5;
+                /* Ici il faut ajouter la ou les règles communes à toutes les faces du cube*/
+                position: absolute;
+            }
+
+            /* Etape 2 */
+            /* Appliquez ici les rotations et translate des différentes faces du cube */
+            .face-front  { transform: rotateY(  0deg) translateZ(100px); }
+            .face-right  { transform: rotateY( 90deg) translateZ(100px); }
+            .face-back   { transform: rotateY(180deg) translateZ(100px); }
+            .face-left   { transform: rotateY(-90deg) translateZ(100px); }
+            .face-top    { transform: rotateX( 90deg) translateZ(100px); }
+            .face-bottom { transform: rotateX(-90deg) translateZ(100px); } 
+
+            /* Etape 3 */
+            /* D'abord il faut créer l'animation de rotation syr Y avec @keyframes et from et to*/
+            @keyframes rotate3D{
+                from {
+                    transform : rotateY(0deg) rotateX(0deg);
+                }
+                to {
+                    transform : rotateY(360deg) rotateX(720deg);
+                }
+            }
+
+            /* Les 6 faces du cube */
+            #cube {
+                width: 200px;
+                height: 200px;
+                left: calc(50% - 100px);
+                top: calc(50% - 100px);
+                position: relative;
+                transform-style: preserve-3d;
+                /* Ensuite il faut appliquer l'animation au cube */
+                animation-name: rotate3D;
+                animation-duration: 4s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }            
+            </style>
+    </head>
+    <body>
+        <section class="container">
+            <h1>Cube 3D</h1>
+            <p>Si vous avez trouvé que les exercices précédents étaient trop simples, attendez de voir celui-ci.</p>
+            <p>Dans cette exercice, vous allez devoir créer un cube en 3D à partir de 6 divs distinctes, les 6 faces du cubes. Puis, vous animerez le cube pour le faire tourner, dans un premier temps sur un seul axe, puis sur plusieurs.</p>
+            <div id="result">
+                <div id="cube"> 
+                    <div class="face face-front">front</div>
+                    <div class="face face-back">back</div>
+                    <div class="face face-right">right</div>
+                    <div class="face face-left">left</div>
+                    <div class="face face-top">top</div>
+                    <div class="face face-bottom">bottom</div>
+                </div>
+            </div>
+            <p>Pour le moment, les divs des faces dépassent de la zone de travail. 
+                C'est normal puisque, comme toutes les divs, elles ont tendance par défaut à vouloir se placer les unes au dessous des autres.</p>
+            <hr>            
+            <h2>Comment faire</h2>
+            <h3>Étape 1 : superposer les divs</h3>
+            <p>Il va d'abord falloir placer les divs les unes sur les autres, pour cela, il suffit de dire que toutes les faces sont en <code class="pr">position:</code><code>absolute;</code></p>
+            <p>Puisque toutes les faces se trouve à l'intérieur d'une div <code class="sl">#cube</code>, elles vont toutes automatiquement aller se placer en position (0, 0) dans le cube.</p>
+            <p>Voici ce que vous devriez obtenir :</p>
+            <img src="assets/step-01.png" alt="">
+            <hr>
+            <h3>Ètape 2 : position des faces du cube</h3>
+            <p>Il va maintenant falloir faire tourner et déplacer en 3 dimensions chacune des faces du cube au bon endroit.</p>
+            <p>Pour cela, vous aller devoir imprimer, systématiquement à chaque face, d'abord une rotation, sur le bon axe et avec le bon angle, selon la face en question et ensuite une translation  de 100px. Ceci aura pour effet de positionner correctement chacune des faces dans le cube.</p>
+            <p>Cela ressemblera donc à <code class="pr"> transform: </code><code class="fc">rotateY(angle) translateZ(100px);</code></p>
+            <div class="alert alert-danger">
+                <h4>Attention !</h4>
+                Toutes les faces ne doivent pas tourner autour de l'axe Y, certaines doivent tourner autour de l'axe X.
+            </div>
+            <p>Essayez de trouver quelle face doit être tourner de combien de degrés et sur quel axe pour reconstituer un cube complet.</p>
+            <div class="alert alert-success">
+                <h4>Astuce</h4>
+                <p>N'hésitez pas à cacher toutes vos faces avec <code class="pr">display: </code><code>none;</code> et à les afficher une par une en travaillant leur position une par une.</p>
+                <p>La face gauche par exemple, doit recevoir le code suivant : <code><span class="pr">transform:</span> <span class="fc">rotateY(<span class="unit">-90deg</span>) translateZ(<span class="unit">100px</span>)</span>;</code></p>
+                <p>Toutes les faces doivent recevoir une rotation de + ou - 90 degrés, sauf la face front, qui ne reçoit pas de rotation et la face back qui reçoit une rotation de 180 degrés.</p>
+            </div>
+            <p>Vous devriez obtenir ceci&nbsp;:</p>
+            <img src="assets/step-02.png" alt="">
+            <hr>
+            <h3>Étape 3 : animation en 3D</h3>
+            <p>Il est temps de créer votre animation en 3D.</p>
+            <p>Celle-ci doit s'appliquer sur toute la div <code class="sl">#cube</code> d'un coup. Vous n'allez pas vous amuser à animer chaque face une par une.</p>
+            <p>Commencez donc par appliquer une rotation de 360 degrés en 4 secondes à votre cube sur son axe Y. Le cube devrait tourner sur sa base.</p>
+            <img src="assets/step-03a.png" alt="">
+            <p>Enfin, ajoutez une rotation de 720 degrés, en plus de la précédente sur son axe X. Pour obtenir un effet maximum.</p>
+            <img src="assets/step-03b.png" alt="">
+        </section>
+    </body>
+</html>

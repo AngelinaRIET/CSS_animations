@@ -1,0 +1,135 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" href="assets/styles.css">
+        <title>Animation CSS - Exercice 9 - Kronos</title>
+        <style>
+            /* Zone de travail */
+            #result {
+                position: relative;
+                height: 300px;
+                border: 1px dashed #ccc;     
+                background-color: rgba(7, 23, 117, 0.2);         
+            }
+
+            /* Ajoutez les règles #keyframes ici */
+            @keyframes full-turn {
+                from {
+                    transform: rotate(0turn);
+                }
+                to {
+                    transform: rotate(1turn);
+                }
+            }
+            /* Aiguille des minutes */
+            #min{
+                position: absolute;
+                width: 4px;
+                height: 70px;   
+                background-color: black;
+                /* Il va déjà falloir modifier les positions de vos aiguilles */
+                /* top:0; 
+                left:-20px;    */  
+                left:calc(50% - 2px);        
+                bottom: 50%;                    
+                /* Ajoutez les options d'animation de la div ici */
+                animation-name: full-turn;
+                animation-duration: 3600s;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+                transform-origin: bottom;
+                                
+
+            }
+             /* Aiguille des secondes */
+            #sec{
+                position: absolute;
+                width: 2px;
+                height: 95px;
+                background-color: red;        
+                /* Il va déjà falloir modifier les positions de vos aiguilles */
+                /* top:0;
+                left:-10px;  */
+                left:calc(50% - 1px);        
+                bottom: 50%;                    
+                /* Ajoutez les options d'animation de la div ici */
+                animation-name: full-turn;
+                animation-duration: 60s;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+                transform-origin: bottom;
+
+            }   
+            /* Le chronomètre */       
+            #chrono {
+                position: absolute;
+                width: 200px;
+                height:200px;
+                left:calc(50% - 100px); 
+                top:20px;
+                border-radius:100px;
+                border: 2px solid black;
+            }  
+            /* point central du chronomètre */
+            #chrono_center {
+                position: absolute;
+                width: 1px;
+                height:1px;
+                left:50%; 
+                top:50%;
+                background-color: black;
+            }                          
+        </style>
+    </head>
+    <body>
+        <section class="container">
+
+        
+            <h1>Chrono (secondes et minutes)</h1>
+            <p>
+                Vous allez maintenant devoir mettre en pratique tout ce que vous avez vu jusqu'ici pour créer un petit chronomètre affichant les secondes et les minutes. 
+            </p>
+            <div id="result">
+                <div id="chrono"> 
+                    <div id="chrono_center"> </div>
+                    <div id="min" > </div>
+                    <div id="sec" > </div>     
+                </div>
+            </div>
+            <hr>            
+            <h2>Comment faire</h2>
+            <p>
+               Le cercle ci-dessous représente les bords de votre chronomètre. <br>
+               Les lignes noire et rouge (des divs allongées) représentent respectivement les minutes et les secondes de votre chrono.<br>
+               Un petit point au centre du chrono (une div de 1px) vous aidera à placer vos aiguilles au centre du chronomètre.
+            </p>
+            <p>
+                Commencez par corriger les positions <code class="pr">top</code> et<code class="pr">left</code> de votre aiguille des secondes de manière à la placer au centre de votre chronomètre.</p>
+            <p>Notez que vos aiguilles sont à l'intérieur de la div <code class="sl">#chrono</code>. Cela signifie que le positionneùent de celles-ci se fait par rapport au chronomètre, et non à votre body.
+            </p>
+            <p>
+                Réalisez votre animation pour faire tourner l'aiguille des secondes dans votre cadran.
+            </p>
+            <p>
+                Faites de même avec l'aiguille des minutes.
+            </p>
+            <div class="alert alert-danger">
+            <h4>Attention !</h4>
+                <p>
+                    Vos aiguilles devront impérativement partir de 00 minutes et 00 secondes, soit, tout en haut.
+                </p>
+                <p>
+                    Evidement l'animation doit être parfaitement fluide et se répéter indéfiniment.
+                </p>
+                <p>
+                    Le positionnement de vos aiguilles doit tenir compte de l'épaisseur de celles-ci.
+                </p>
+            </div>
+            <div class="alert alert-success">
+                <h4>Astuce</h4>
+                <p>Une minute représente 60 secondes, et une heure 3600 secondes. Vous n'allez bien entedu pas attendre une heure pour voir si votre chrono marche bien.</p>
+                <p>Travaillez avec des valeurs plus petites, par exemple en accélérant le temps par un facteur 100, soit des minutes de .6 secondes et des heures de 36 secondes.</p>
+            </div>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animer des icônes SVG</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <ol>
+        <li>
+            <h4>Icône de souris</h4>
+            <p>Animation : monte de 1px et descend de 6px, infiniement. <small>Durée : 1 seconde</small></p>
+            <img src="img/mouse-animated.svg" alt="">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+                <title>mouse animated</title>
+                <g class="nc-icon-wrapper" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                    transform="translate(0.5 0.5)" fill="#111111" stroke="#111111">
+                    <g class="nc-loop_mouse-64">
+                        <path fill="none" stroke="#111111" stroke-miterlimit="10"
+                            d="M38,62H26 c-6.6,0-12-5.4-12-12V14c0-6.6,5.4-12,12-12h12c6.6,0,12,5.4,12,12v36C50,56.6,44.6,62,38,62z" />
+                        <path class="move-y" data-color="color-2" fill="none" stroke-miterlimit="10"
+                            d="M32,27L32,27c-1.65686,0-3-1.34314-3-3 V14c0-1.65685,1.34314-3,3-3H32c1.65685,0,3,1.34314,3,3V24C35,25.65686,33.65686,27,32,27z"
+                            data-cap="butt" transform="translate(0 4.531871999999974)" />
+                    </g>
+                </g>
+            </svg>
+        </li>
+        <li>
+            <h4>Les vagues</h4>
+            <p>Animation : la vague du bas se voit applatie à 60% puis étirée à 120%. <small>Durée : 3 secondes</small>
+            </p>
+            <img src="img/water-wave.svg" alt="">
+            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+                <title>water-wave</title>
+                <g stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="#111111" stroke="#111111">
+                    <path class="distortion-y"
+                        d="M2,54a13.865,13.865,0,0,0,10.227-4.5,13.872,13.872,0,0,0,20.455,0,13.893,13.893,0,0,0,19.773.71A13.8,13.8,0,0,0,62,54"
+                        fill="none" stroke="#111111" stroke-miterlimit="10"></path>
+                    <path
+                        d="M2,40H4.727c16.364,0,12.841-17.48,23.224-26.151C39.346,4.334,49.661,15.2,51.28,17.236,39.952,19.269,42.909,40,59.273,40H62"
+                        fill="none" stroke-miterlimit="10"></path>
+                </g>
+            </svg>
+        </li>
+        <li>
+            <h4>Ballon de volley</h4>
+            <p>Animation : le ballon tourne sur lui même. <small>Durée : 3 secondes</small>
+            </p>
+            <img src="img/volleyball.svg" alt="">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                <g class="nc-icon-wrapper rotate-360" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    fill="#111111" stroke="#111111">
+                    <path data-cap="butt" data-color="color-2" fill="none" stroke-miterlimit="10"
+                        d="M2.5058594,28.6624756 C4.8481445,29.5124512,7.3641357,30,10,30c5.3186035,0,10.291626-2.666748,14-6" />
+                    <path data-cap="butt" data-color="color-2" fill="none" stroke-miterlimit="10"
+                        d="M41.8046303,36.912468 c-0.92799-2.3124847-2.2419167-4.512825-3.9991608-6.4774837C34.2597351,26.4707317,28.9567089,24.5418911,24,24" />
+                    <path data-cap="butt" data-color="color-2" fill="none" stroke-miterlimit="10"
+                        d="M23.6434135,2.0088744 c-1.2928295,2.1301055-2.2643356,4.5016217-2.781271,7.0862994C19.8190784,14.3104935,21.4587498,19.7099361,24,24" />
+                    <path data-cap="butt" data-color="color-2" fill="none" stroke-miterlimit="10"
+                        d="M34.6563187,27.7035637 C30.875,35.375,25.1444454,40.4736061,8.8222227,39.9243011" />
+                    <path data-cap="butt" data-color="color-2" fill="none" stroke-miterlimit="10"
+                        d="M14.3557386,29.4186363 C8.5,22.416666,8.7016773,11.909297,10.8925056,6.3296485" />
+                    <path data-cap="butt" data-color="color-2" fill="none" stroke-miterlimit="10"
+                        d="M20.5680771,13.3180828 c8.0981655-1.8412237,15.5515823-0.4835835,25.3867493,12.1031513" />
+                    <circle fill="none" stroke="#111111" stroke-miterlimit="10" cx="24" cy="24" r="22" />
+                </g>
+            </svg>
+        </li>
+        <li>
+            <h4>Baseball</h4>
+            <p>Animation : les lignes s'animent pour créer du mouvement. <small>Durée : 1 seconde</small>
+            </p>
+            <img src="img/baseball-pitch.svg" alt="">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                <g class="nc-icon-wrapper" stroke-linecap="square" stroke-linejoin="miter" stroke-width="2"
+                    fill="#000000" stroke="#000000">
+                    <path data-cap="butt" d="M20.034,24.71A12.957,12.957,0,0,0,33.71,11.034" fill="none"
+                        stroke="#000000" stroke-miterlimit="10" stroke-linecap="butt" />
+                    <path data-cap="butt" d="M32.29,36.966A12.957,12.957,0,0,1,45.966,23.29" fill="none"
+                        stroke="#000000" stroke-miterlimit="10" stroke-linecap="butt" />
+                    <circle cx="33" cy="24" r="13" fill="none" stroke="#000000" stroke-miterlimit="10" />
+                    <line class="compress-x" data-color="color-2" x1="16" y1="14" x2="6" y2="14" fill="none"
+                        stroke-miterlimit="10" />
+                    <line class="compress-x" data-color="color-2" x1="16" y1="34" x2="6" y2="34" fill="none"
+                        stroke-miterlimit="10" />
+                    <line class="compress-x delay-03" data-color="color-2" x1="12" y1="24" x2="2" y2="24" fill="none"
+                        stroke-miterlimit="10" />
+                </g>
+            </svg>
+        </li>
+        <li>
+            <h4>Badminton</h4>
+            <p>Animation : créer un mouvement de service de volant. <small>Durée : 1 seconde</small>
+            </p>
+            <img src="img/shuttlecock.svg" alt="">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                <g class="nc-icon-wrapper badminton" stroke-linecap="square" stroke-linejoin="miter" stroke-width="2"
+                    fill="#000000" stroke="#000000">
+                    <path data-color="color-2" fill="none" stroke-miterlimit="10"
+                        d=" M19.583334,28.416666l13.1948338-13.1948347c1.5621605-1.5621605,1.5620766-4.09478,0-5.6568537 c-1.5620728-1.5620747-4.0946941-1.5621605-5.6568546,0c1.5621605-1.5621605,1.5620747-4.0947804,0-5.6568546 c-1.5620728-1.5620742-4.0946922-1.5621605-5.6568527,0c-0.4457397,0.4457395-0.7494888,0.9740846-0.9407673,1.5327265 L7.3223243,32.1923943" />
+                    <line data-color="color-2" fill="none" stroke-miterlimit="10" x1="27.1213131" y1="9.5649776"
+                        x2="15.9961977" y2="25.1401405" />
+                    <line data-color="color-2" fill="none" stroke-miterlimit="10" x1="38.4350243" y1="20.8786869"
+                        x2="23" y2="32" />
+                    <path data-color="color-2" fill="none" stroke-miterlimit="10"
+                        d=" M32.7781677,15.2218313c1.5621605-1.5621605,4.09478-1.5620737,5.6568565,0c1.5620728,1.5620737,1.5621605,4.0946951,0,5.6568556 c1.5621605-1.5621605,4.09478-1.5620747,5.6568527,0c1.5620728,1.5620728,1.5621605,4.0946922,0,5.6568527 c-0.4457397,0.4457397-0.9740829,0.7494888-1.5327263,0.9407673l-26.751545,13.2013702" />
+                    <path fill="none" stroke="#000000" stroke-miterlimit="10"
+                        d="M4.4939013,43.5061073 l-0.0000086-0.0000076c-2.3431432-2.3431435-2.3431432-6.1421318,0-8.4852753l2.8284316-2.8284302l8.485281,8.4852829 l-2.8284311,2.8284302C10.6360312,45.8492508,6.8370447,45.8492508,4.4939013,43.5061073z" />
+                </g>
+            </svg>
+        </li>
+    </ol>
+
+</body>
+
+</html>

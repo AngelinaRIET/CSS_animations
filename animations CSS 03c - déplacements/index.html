@@ -1,0 +1,138 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" href="assets/styles.css">
+        <title>Animation CSS - Exercice 1</title>
+        <style>
+            /* Ajoutez la règle #keyframes ici */
+            @keyframes moving1 {
+                0% {
+                    /* Vos règles CSS de départ */
+                    top:0px; left:0px;
+                }
+                25% {
+                    /* Vos règles CSS à 25% de l'animation */
+                    top:300px; left:0px;
+                }
+                /* ... jusqu'à 100% */
+                50% {
+                    /* Vos règles CSS à 25% de l'animation */
+                    top:300px; left:300px;
+                }
+                75% {
+                    /* Vos règles CSS à 25% de l'animation */
+                    top:0px; left:300px;
+                }
+                100% {
+                    /* Vos règles CSS à 25% de l'animation */
+                    top:0px; left:0px;
+                }                                                
+            }
+            /* Ajoutez la règle #keyframes ici */
+            @keyframes moving2 {
+                0% {
+                    /* Vos règles CSS de départ */
+                    top:0px;left:500px; 
+                    background-color: blue;
+                }
+                25% {
+                    /* Vos règles CSS à 25% de l'animation */
+                    top:300px;left:800px; 
+                }                   
+                50% {
+                    /* Vos règles CSS à 25% de l'animation */
+                    top:300px;left:500px; 
+                    background-color:rebeccapurple;
+                }   
+                75% {
+                    /* Vos règles CSS à 25% de l'animation */
+                    top:0px;left:800px; 
+                }                         
+                100% {
+                    /* Vos règles CSS à 25% de l'animation */
+                    top:0px;left:500px; 
+                    background-color: blue;
+                }                                                             
+            }
+            /* Zone de travail */
+            #result {
+                display: flex;
+                justify-content: space-between;   
+                position: relative;
+                height: 500px;
+                border: 1px dashed #ccc;     
+                background-color: rgba(7, 23, 117, 0.2);         
+            }
+
+            /* Boite à animer */
+            #animated_box{
+                width:200px;
+                height: 200px;
+                background-color: red;
+                /* obligatoires pour pouvoir bouger la div : */
+                position: absolute;
+                left:0px; top:0px;                
+                /* Ajoutez les options d'animation de la div ici */
+                animation-name: moving1;
+                animation-duration: 5s;                    
+
+            }
+            /* Boite à animer */
+            #animated_box2{
+                width:200px;
+                height: 200px;
+                background-color: blue;
+                /* obligatoires pour pouvoir bouger la div : */
+                position: absolute;
+                left:500px; top:0px;                
+                /* Ajoutez les options d'animation de la div ici */       
+                animation-name: moving2;
+                animation-duration: 5s;   
+            }            
+        </style>
+    </head>
+    <body>
+        <section class="container">
+        <h1>Animation de la position d'un élément</h1>
+        <p>
+            Votre objectif est cette fois-ci de jouer avec les positions <code class="pr">top</code> et <code class="pr">left</code> de la div pour la faire bouger.
+        </p>
+        <div id="result">
+            <div id="animated_box"></div>
+            <div id="animated_box2"></div>
+        </div>
+        <p>
+            Pour cette exercice la div est placée en haut à gauche d'une div plus grande qui la contient.
+        </p>
+        <p> Notre div est en <code class="pr">position:</code><code >abolute</code>, tandis que sa div parente est en <code class="pr">position:</code><code >relative</code>.</p>
+        <hr>
+        <h2>Comment faire</h2>
+        <p>
+            Parceque notre div est en <code class="pr">position:</code><code >abolute</code>, il devient alors possible de la déplacer dans son contenant.</p>
+        <p>
+            Ici, notre box considère le coin supérieur gauche de son contenant comme étant son point d'origine (0, 0), on peut donc maintenant s'amuser à changer ses propriétés <code class="pr">top</code> et <code class="pr">left</code>, pour la faire bouger.
+        </p>
+        <p>
+            Vous allez devoir modifier le CSS pour faire décrire un carré de <code class="unit">300px</code> x <code class="unit">300px</code> à votre div.
+        </p>
+        <hr>
+        <h3>Étape 1 : création de l'animation</h3>
+        <p>Il va vous falloir créer l'animation suivante :<p>
+        <ul>
+            <li>0% : (0, 0)</li>
+            <li>25% : (300, 0)</li>
+            <li>50% : (300, 300)</li>
+            <li>75% : (0, 300)</li>
+            <li>100% : retour au point de départ</li>
+        </ul>
+        <p>Reportez-vous à l'exercice précédent pour refaire le même type d'animation, mais cette fois-ci, ce n'est pas sur la couleur de fond qu'il faudra jouer mais sur les propriétés <code class="pr">top</code> et <code class="pr">left</code>.</p>
+        <hr>
+        <h3>Étape 2 : Appliquer l'animation</h3>
+        <p>Vous devriez maintenant savoir comment appliquer cette animation à votre div.</p>
+        <hr>
+            <h2>Aller plus loin</h2>
+            <p>Essayez de créer d'autres mouvements avec plus d'étapes, ou moins d'étapes.</p>
+            <p>Vous pouvez aussi essayer de combiner animation de position et de couleurs de fond.</p>
+        </section>
+    </body>
+</html>

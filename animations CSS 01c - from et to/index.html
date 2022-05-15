@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <title>Animation CSS - Exercice 1</title>
+        <link rel="stylesheet" href="assets/styles.css">
+        <style>
+
+
+            /* ICI ajoutez la règle @keyframes */   
+            @keyframes red-to-orange {
+                from {
+                    /* Vos règles CSS de départ */
+                    /* C'est à dire l'apparence de départ du carré */
+                    background-color: red;
+                }
+                to {
+                    /* Vos règles CSS de départ */
+                    /* C'est à dire l'apparence d'arrivée */
+                    background-color: orange;
+                }
+            }
+                
+            @keyframes green-to-blue {
+                from {
+                    /* Vos règles CSS de départ */
+                    /* C'est à dire l'apparence de départ du carré */
+                    background-color: green;
+                }
+                to {
+                    /* Vos règles CSS de départ */
+                    /* C'est à dire l'apparence d'arrivée */
+                    background-color: blue;
+                }
+            }
+
+            /* Zone de travail */
+            #result {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            /* Boite à animer */
+            #animated_box{
+                width:200px;
+                height: 200px;
+                background-color: orange;
+                /* ICI, ajoutez les options d'animation de la div */ 
+                animation-name: red-to-orange;
+                animation-duration: 3s;      
+                                                                                                      
+            }
+
+            /* Boite à animer */
+            #animated_box2{
+                width:200px;
+                height: 200px;
+                background-color: orange;
+                /* ICI, ajoutez les options d'animation de la div */ 
+                animation-name: red-to-orange;
+                animation-duration: 10s;   
+                                                                                                  
+            }
+
+            /* Boite à animer */
+            #animated_box3{
+                width:200px;
+                height: 200px;
+                background-color: blue;
+                /* ICI, ajoutez les options d'animation de la div */ 
+                animation-name: green-to-blue;
+                animation-duration: 5s;                                                                                                           
+            }                        
+        </style>
+    </head>
+    <body>
+        <section class="container">
+        <h1>Animation de la couleur d'un élément</h1>
+        <p>
+            Votre objectif est de parvenir à créer une animation qui fasse changer, en douceur, la couleur de fond du carré ci-dessous (une simple div).
+        </p>
+        <div id="result">
+            <div id="animated_box"></div>
+            <div id="animated_box2"></div>
+            <div id="animated_box3"></div>
+        </div>
+        <hr>
+        <h2>Comment faire</h2>
+        <p>
+            Si vous ouvrez ce fichier dans VSCode, vous verrez qu'un style est directement intégré dans le "head", du document.</p>
+            <p>On aurait pu utiliser un fichier CSS distinct, mais pour un code ausi minimaliste, cela n'était pas nécessaire.
+        </p>
+        <p>
+            Vous allez devoir modifier le CSS - et uniquement le CSS - pour parvenir à créer une animation progressive. Celle-ci devra faire passer la couleur du carré de <code>orange</code> à <code>red</code> en <code class="unit">3s</code> (3 secondes).
+            Pour le moment, l'animation se fera automatiquement au lancement de la page.
+        </p>
+        <hr>
+        <h3>Étape 1 : création de l'animation</h3>
+        <p>
+            Il faut déjà définir ce que l'on appelle les <code class="kf">keyframes</code> de l'animation. C'est à dire, les différentes étapes de celle-ci.<br>
+            Dans notre cas, il va falloir définir un point de départ <code class="kw">from</code> pour lequel la couleur de fond de l'objet ciblé est <code>orange</code>.<br>
+            Puis, une étape d'arrivée <code class="kw">to</code>, où la couleur de fond sera <code>red</code>.
+        </p>
+        <p>
+            Votre animation doit porter un nom unique, c'est vous qui le choisissez.
+        </p>
+        <p>
+            On écrit donc une règle CSS spéciale comme suit :
+        </p>
+            <pre class="code">
+                <code class="css">
+                <span class="kf">@keyframes</span> <span class="pr">nom_de_votre_animation</span> {
+                    <span class="kw">from</span> {
+                        <span class="cm">/* Vos règles CSS de départ */
+                        /* C'est à dire l'apparence de départ du carré */</span>
+                    }
+                    <span class="kw">to</span> {
+                        <span class="cm">/* Vos règles CSS d'arrivée */
+                        /* C'est à dire l'apparence finale de votre élément */</span>
+                    }
+                }
+                </code>
+            </pre>
+            <div class="alert alert-danger">
+            <h4>Attention !</h4>
+                <p>
+                    Il s'agit bien d'une règle CSS à part entière, il ne faut pas essayer de mettre celle-ci à l'intérieur du CSS de votre div <code class="sl">#animated_box</code>. <br>
+                    On fait d'abord la règle CSS <code class="kf">@keyframes</code>, et ensuite, on fera la règle <code class="sl">#animated_box</code>.
+                </p>
+
+            </div>
+            <hr>
+            <h3>Étape 2 : Attacher l'animation à la div <code class="sl">#animated_box</code></h3>
+            <p>Une fois définie votre règle CSS <code class="kf">@keyframes</code>, et les apparences de départ et d'arrivée de celle-ci, il ne reste qu'à appliquer cette animation à la div.</p>
+            <p>Pour cela, dans la règle CSS de <code class="sl">#animated_box</code>, vous devez ajouter :</p>
+            <pre class="code">
+                <code class="css">
+                    <span class="pr">animation-name</span>: nom_de_votre_animation;
+                    <span class="pr">animation-duration</span>: temps en secondes de l'animation;
+                </code>
+            </pre>
+            <p>
+                Comme vous le voyez, c'est directement dans le CSS de la div que l'on dit quelle est l'animation à utiliser ( en utilisant le nom que l'on a créé précédement) et en combien de temps il faut jouer celle-ci.
+            </p>
+            <div class="alert alert-info">
+                <h4> À noter :</h4>
+                <p>
+                    Le <code class="pr">background-color</code> de votre div est très important car c'est la couleur qui sera réellement affichée une fois l'animation terminée. 
+                    En général, on utilise donc la même couleur que pour le <code class="kw">to</code>, de l'animation.
+                </p>
+            </div>
+            <div class="alert alert-success">
+                <h4>À retenir :</h4>
+                <ul>
+                    <li>On crée une animation avec la règle <code class="kf">@keyframe</code> et on lui donne un nom unique.</li>
+                    <li>On attache une animation à un élément grâce à la propriété <code class="pr">animation-name</code>.</li>
+                    <li>Il est possible d'attacher plusieur fois la même animation à différents objects.</li>
+                    <li>Il est possible de la faire durer plus ou moins longtemps un animation grâce à la propriété <code class="pr">animation-duration</code>.</li>
+                </ul>
+            </div>
+            <hr>
+            <h2>Aller plus loin</h2>
+            <p>Essayez de créer d'autre divs supplémentaires et de leur attacher des animations de couleur différentes avec des délais différents.</p>
+        </section>
+    </body>
+</html>

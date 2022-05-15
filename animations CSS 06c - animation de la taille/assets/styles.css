@@ -1,0 +1,166 @@
+/* Fonts import
+ * https://google-webfonts-helper.herokuapp.com/fonts/rubik?subsets=latin
+ * rubik-regular - latin */
+ @font-face {
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    src: url("./assets/fonts/Rubik/rubik-v9-latin-regular.eot");
+    src: local("Rubik"), local("Rubik-Regular"),
+      url("./assets/fonts/Rubik/rubik-v9-latin-regular.eot?#iefix") format("embedded-opentype"),
+      url("./assets/fonts/Rubik/rubik-v9-latin-regular.woff2") format("woff2"),
+      url("./assets/fonts/Rubik/rubik-v9-latin-regular.woff") format("woff"),
+      url("./assets/fonts/Rubik/rubik-v9-latin-regular.ttf") format("truetype"),
+      url("./assets/fonts/Rubik/rubik-v9-latin-regular.svg#Rubik") format("svg");
+  }
+  
+  /* rubik-italic - latin */
+  @font-face {
+    font-family: "Rubik";
+    font-style: italic;
+    font-weight: 400;
+    src: url("./assets/fonts/Rubik/rubik-v9-latin-italic.eot");
+    src: local("Rubik Italic"), local("Rubik-Italic"),
+      url("./assets/fonts/Rubik/rubik-v9-latin-italic.eot?#iefix") format("embedded-opentype"),
+      url("./assets/fonts/Rubik/rubik-v9-latin-italic.woff2") format("woff2"),
+      url("./assets/fonts/Rubik/rubik-v9-latin-italic.woff") format("woff"),
+      url("./assets/fonts/Rubik/rubik-v9-latin-italic.ttf") format("truetype"),
+      url("./assets/fonts/Rubik/rubik-v9-latin-italic.svg#Rubik") format("svg");
+  }
+  
+  /* rubik-700 - latin */
+  @font-face {
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 700;
+    src: url("./assets/fonts/Rubik/rubik-v9-latin-700.eot");
+    src: local("Rubik Bold"), local("Rubik-Bold"),
+      url("./assets/fonts/Rubik/rubik-v9-latin-700.eot?#iefix") format("embedded-opentype"),
+      url("./assets/fonts/Rubik/rubik-v9-latin-700.woff2") format("woff2"),
+      url("./assets/fonts/Rubik/rubik-v9-latin-700.woff") format("woff"),
+      url("./assets/fonts/Rubik/rubik-v9-latin-700.ttf") format("truetype"),
+      url("./assets/fonts/Rubik/rubik-v9-latin-700.svg#Rubik") format("svg");
+  }
+
+  html,
+body {
+  min-height: 100vh;
+}
+
+html {
+  background-color: #3b9c9c;
+
+  /* https://mycolor.space/gradient3?ori=to+right+top&hex=%23386DA8&hex2=%233B93B3&hex3=%233B9C9C&submit=submit */
+  background-image: linear-gradient(to right top, #386da8, #3375ac, #307cae, #3083b0, #338ab2, #318eb1, #3192b0, #3496af, #3298ab, #3299a6, #369ba1, #3b9c9c);
+  color: #fff5ee;
+  font-family: "Rubik", sans-serif;
+  transition: all .3s;
+}
+
+body {
+  background-color: #3b9c9c;
+
+  /* https://www.transparenttextures.com/ */
+  background: url("bg.png") repeat;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10rem;  
+}
+
+.container {
+    max-width: 1060px;
+    margin: 0 auto;
+} 
+
+a,
+a:active,
+a:visited {
+  color: #ff833b;
+}
+
+hr {
+    overflow: visible; /* For IE */
+    padding: 0;
+    margin-top: 2rem;
+    border: none;
+    border-top: medium double rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+hr:before{
+    content: "";
+    position: relative;
+    display: block;
+    width: 14px;
+    height: 14px;
+    top:-9px;
+    left:calc(50% - 9px);
+    background-color: white;
+    transform: rotate(45deg);
+
+}
+
+.alert {
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+.alert-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
+
+
+pre.code, code {
+    background-color: rgb(39, 35, 35);
+    color: #f89e6a;
+}
+code {
+    padding: 0 .5rem;
+}
+code.css .pr,
+code.pr {
+    color: #72cbf5;
+}
+
+code.css .kf,
+code.kf {
+    color: #c563ec;
+}
+
+code.css .cm,
+code.cm {
+    color: #13b343;
+}
+
+code.css .sl,
+code.sl {
+    color: #f89e6a;
+}
+
+code.css .kw,
+code.kw {
+    color: #ffffff;
+}
+
+code.css .unit,
+code.unit {
+    color: #96d4ae;
+}
+code.css .fc,
+code.fc {
+    color: #dfe9b1;
+}

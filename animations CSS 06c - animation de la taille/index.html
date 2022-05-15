@@ -1,0 +1,136 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" href="assets/styles.css">
+        <title>Animation CSS - Exercice 7 - Animation de la taille</title>
+        <style>
+            /* Zone de travail */
+            #result {
+                position: relative;
+                height: 500px;
+                border: 1px dashed #ccc;     
+                background-color: rgba(7, 23, 117, 0.2);         
+            }
+
+            /* Ajoutez les règles #keyframes ici */
+            @keyframes bigger {
+                from {
+                    transform: scale(1,1);
+                }
+                to {
+                    transform: scale(2,2);
+                }
+            }
+            @keyframes smaller {
+                from {
+                    transform: scale(1,1);
+                }
+                to {
+                    transform: scale(.5,.5);
+                }
+            }
+            @keyframes scale-to-zero {
+                from {
+                    transform: scaleY(1);
+                }
+                to {
+                    transform: scaleY(0);
+                }
+            }
+
+            /* Boites à animer */
+            #animated_box1{
+                width:100px;
+                height: 100px;
+                background-color: red;
+                position: absolute;
+                left:calc(20% - 50px); 
+                top:100px;                
+                /* Ajoutez les options d'animation de la div ici */
+                animation-name: bigger;
+                animation-duration: 1s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+                animation-timing-function: linear;
+
+            }
+            #animated_box2{
+                width:100px;
+                height: 100px;
+                background-color: lightblue;
+                position: absolute;
+                left:calc(50% - 50px); 
+                top:100px;                
+                /* Ajoutez les options d'animation de la div ici */
+                animation-name: smaller;
+                animation-duration: 1s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+                animation-timing-function: linear;
+
+            }
+            #animated_box3{
+                width:20px;
+                height: 200px;
+                background-color: yellow;
+                position: absolute;
+                left:calc(80% + 10px); 
+                top:100px;                
+                /* Ajoutez les options d'animation de la div ici */
+                animation-name: scale-to-zero;
+                animation-duration: 1s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+                animation-timing-function: linear;
+                transform-origin: top;
+            }
+        </style>
+    </head>
+    <body>
+        <section class="container">
+
+            <h1>Animation de la taille</h1>
+            <p>
+                Votre objectif va maintenant être de créer trois animations des divs ci-dessous en jouant sur les tailles de celles-ci :
+                <ul>
+                    <li><code class="sl"> #animated_box1</code>&nbsp;: Doubler la largeur de la div et revenir à la taille normale toutes les 2 secondes.</li>
+                    <li><code class="sl"> #animated_box2</code>&nbsp;: Diviser la largeur et la hauteur de la div par 2 et revenir à la taille normale toutes les 2 secondes</li>
+                    <li><code class="sl"> #animated_box3</code>&nbsp;: Faire un dimenssionnement de 0 à 100% de la hauteur de la div toutes les 2 secondes, mais en la gardant "accrochée" par le haut (seul le bas de la div doit bouger).</li>
+                </ul>
+            </p>
+            <div id="result">
+                <div id="animated_box1"> </div>
+                <div id="animated_box2"> </div>
+                <div id="animated_box3"> </div>
+            </div>
+            <hr>            
+            <h2>Comment faire</h2>
+            <p>
+                Il serait possible de modifier les tailles des divs en jouant avec les propriétés <code class="pr">width</code> et <code class="pr">height</code>. <br>
+                Cependant, ceci nous obligerait à toujours garder à l'esprit toutes les tailles de tous les éléments et à écrire des animations spécifiques pour toutes les tailles d'objets possibles.<br>
+            </p>
+            <p>
+                Il est largement préférable d'utiliser les fonctions de transformation <code class="fc">scale()</code>, <code class="fc">scaleX()</code> ou encore< code class="fc">scaleY()</code> comme suit&nbsp;:
+            </p>
+            <pre class="code">
+                <code class="css">
+            ...
+            <span class="pr">transform:</span> <span class="fc">scale(<span class="unit">%x</span>, <span class="unit">%y</span>)</span>;
+            <span class="pr">transform:</span> <span class="fc">scaleX(<span class="unit">%x</span>)</span>;
+            <span class="pr">transform:</span> <span class="fc">scaleY(<span class="unit">%y</span>)</span>;
+            ...
+                </code>
+            </pre>
+            <hr>
+            <div class="alert alert-danger">
+            <h4>Attention !</h4>
+            <p>Un pourcentage ici s'exprime sous la forme d'un nombre décimal 1 pour 100%, 2 pour 200%, 0.5 pour 50%...</p>
+            </div>
+            <div class="alert alert-info">
+                <h4>Documentation de <code class="fc">transform()</code></h4>
+                <p><a href=" https://developer.mozilla.org/fr/docs/Web/CSS/transform"> https://developer.mozilla.org/fr/docs/Web/CSS/transform</a></p>
+            </div>  
+               
+        </section>
+    </body>
+</html>

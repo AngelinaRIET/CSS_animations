@@ -1,0 +1,158 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" href="assets/styles.css">
+        <title>Animation CSS - Exercice 6 - Rotation</title>
+        <style>
+            /* Zone de travail */
+            #result {
+                position: relative;
+                height: 500px;
+                border: 1px dashed #ccc;     
+                background-color: rgba(7, 23, 117, 0.2);         
+            }
+
+            /* Ajoutez les règles #keyframes ici */
+            @keyframes full-turn {
+                from {
+                    transform: rotate(0);
+                }
+                to {
+                    transform: rotate(1turn);
+                }
+            }
+
+            @keyframes balance {
+                from {
+                    transform: rotate(-30deg);
+                }
+                to {
+                    transform: rotate(30deg);
+                }
+            }
+
+            /* Boites à animer */
+            #animated_box1{
+                width:100px;
+                height: 100px;
+                background-color: red;
+                position: absolute;
+                left:calc(20% - 50px); top:100px;                
+                /* Ajoutez les options d'animation de la div ici */
+                animation-name: full-turn;
+                animation-duration: 5s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+            #animated_box2{
+                width:50px;
+                height: 50px;
+                background-color: lightblue;
+                position: absolute;
+                left:calc(50% - 25px); top:100px;                
+                /* Ajoutez les options d'animation de la div ici */
+                animation-name: full-turn;
+                animation-duration: 5s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+                transform-origin: bottom left
+            }
+            #animated_box3{
+                width:20px;
+                height: 100px;
+                background-color: yellow;
+                position: absolute;
+                left:calc(80% - 10px); top:100px;                
+                /* Ajoutez les options d'animation de la div ici */
+                animation-name: balance;
+                animation-duration: 1s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+                animation-timing-function: ease-in-out;    
+                transform-origin: top;            
+
+            }
+
+            /* Cibles autour desquelles vous devriez faire vos rotations */
+            /* Celles-ci sont juste là pour vous servir de repères visuels*/
+            .target {
+                background-color: black;
+                width: 4px;
+                height: 4px;
+                position: absolute;
+            }
+            #animated_box1 .target{
+                top: calc(50% - 2px);
+                left: calc(50% - 2px);
+            }
+            #animated_box2 .target{
+                bottom: 0;
+                left: 0;
+            }
+            #animated_box3 .target{
+                top: 0;
+                left: calc(50% - 2px);
+            }                        
+        </style>
+    </head>
+    <body>
+        <section class="container">
+            <h1>Rotation d'un élément sur différents axes</h1>
+            <p>
+                Vous allez maintenant utiliser travailler sur trois divs différentes. <br>Celles-ci sont identifiées par <code class="sl"> #animated_box1</code>,  <code class="sl">#animated_box2</code> et  <code class="sl">#animated_box3</code>.
+            </p>            
+            <p>
+                Votre objectif sera d'appliquer trois rotations différentes à ces trois divs comme suit&nbsp;:
+                <ul>
+                    <li><code class="sl"> #animated_box1</code>&nbsp;: 1 tour complet en 5 secondes se répétant à l'infini.</li>
+                    <li><code class="sl"> #animated_box2</code>&nbsp;: 1 tour complet en 5 secondes se répétant à l'infini, mais autour de son coin inférieur gauche.</li>
+                    <li><code class="sl"> #animated_box3</code>&nbsp;: Un mouvement de balancier de 30 degrés à gauche et 30 degrés à droite à chaque seconde, simulant un métronome ou un pendule. À vous de le faire tourner autour du bon axe et de lui appliquer le bon type d'animation pour obtenir un effet de pendule réaliste.</li>
+                </ul>
+            </p>
+            <p>Des repères visuels ont été placés de façon à ce que vous puissiez voir autour de quels points devraient tourner vos divs.</p>
+                <div id="result">
+                    <div id="animated_box1"><div class="target"></div></div>
+                    <div id="animated_box2"><div class="target"></div></div>
+                    <div id="animated_box3"><div class="target"></div></div>
+                </div>
+            <hr>
+            <h2>Comment faire</h2>
+            <p>
+                Les rotations en CSS font parties d'un ensemble de transformations qu'il est possible d'appliquer à un ou plusieurs objets. 
+            </p>
+            <p>
+                Pour appliquer une transformation on utilise la propriété CSS <code class="pr">transform</code> suivie de la fonction de transformation à utiliser, 
+                dans notre cas <code class="fc">rotate()</code></strong>.
+            </p>
+            <p>
+                Cela donne donc un code comme suit :
+            </p>
+        </p>
+        <pre class="code">
+            <code class="css">
+            ...
+            <span class="pr">transform:</span><span class="fc"> rotate(<span class="unit">angle</span>)</span>;
+            ...
+                </code>
+            </pre>
+            <hr>            
+            <h2>Conseils</h2>
+            <div class="alert alert-info">
+            <h4>Unités d'angles</h4>
+            <p>Les angles peuvent-être exprimés en utilisant différentes unités, pour en savoir consultez la documentation suivante&nbsp;:</p>
+            <p><a href="https://developer.mozilla.org/fr/docs/Web/CSS/angle">https://developer.mozilla.org/fr/docs/Web/CSS/angle</a></p>
+        </div>  
+
+            <div class="alert alert-info">
+            <h4>
+                Point d'origine de la rotation
+            </h4>
+            <p>Par défaut une rotation se fait autour du point central d'un objet.<br> Il est cependant possible de modifier cela en précisant le point d'origine de la transformation avec la propriété <code class="pr">transform-origin</code></p>
+            
+            <p><a href="https://developer.mozilla.org/fr/docs/Web/CSS/transform-origin">https://developer.mozilla.org/fr/docs/Web/CSS/transform-origin</a></p>
+            <p>Pour cette exercice vous allez devoir utiliser des valeurs simples pour préciser ce point d'origine, comme <code class="unit">top</code>, <code class="unit">left</code>, <code class="unit">right</code>...</p>
+            </div>
+            
+        </section>
+    </body>
+</html>

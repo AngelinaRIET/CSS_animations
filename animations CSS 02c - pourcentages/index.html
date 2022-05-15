@@ -1,0 +1,154 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" href="assets/styles.css">
+        <title>Animation CSS - Exercice 1</title>
+        <style>
+
+            /* Ajoutez la règle @keyframes ici */
+            @keyframes animated-colors {
+                0% {
+                    /* Vos règles CSS de départ */
+                    background-color: red;
+                }
+                25% {
+                    /* Vos règles CSS à 25% de l'animation */
+                    background-color: orange;
+                }
+                /* ... jusqu'à 100% */
+                50% {
+                    /* Vos règles CSS à 25% de l'animation */
+                    background-color: yellow;
+                }
+                75% {
+                    /* Vos règles CSS à 25% de l'animation */
+                    background-color: green;
+                }
+                100% {
+                    /* Vos règles CSS à 25% de l'animation */
+                    background-color: blue;
+                }                                                
+            }
+            
+            @keyframes animated-colors2 {
+                0% {
+                    /* Vos règles CSS de départ */
+                    background-color: red;
+                }
+                25% {
+                    /* Vos règles CSS à 25% de l'animation */
+                    background-color: orange;
+                }
+                /* ... jusqu'à 100% */
+                50% {
+                    /* Vos règles CSS à 25% de l'animation */
+                    background-color: yellow;
+                }
+                75% {
+                    /* Vos règles CSS à 25% de l'animation */
+                    background-color: orange;
+                }
+                100% {
+                    /* Vos règles CSS à 25% de l'animation */
+                    background-color: red;
+                }                                                
+            }            
+
+            /* Zone de travail */
+            #result {
+                display: flex;
+                justify-content: space-between;                 
+            }
+
+            /* Boite à animer */
+            #animated_box{
+                width:200px;
+                height: 200px;
+                background-color: blue;
+                /* Ajoutez les options d'animation de la div ici */
+                animation-name: animated-colors;
+                animation-duration: 5s;                   
+            }
+
+            /* Boite à animer */
+            #animated_box2{
+                width:200px;
+                height: 200px;
+                background-color: blue;
+                /* Ajoutez les options d'animation de la div ici */
+                animation-name: animated-colors;
+                animation-duration: 20s;                    
+            }
+            
+            /* Boite à animer */
+            #animated_box3{
+                width:200px;
+                height: 200px;
+                background-color: red;
+                /* Ajoutez les options d'animation de la div ici */
+                animation-name: animated-colors2;
+                animation-duration: 5s;                  
+            }            
+        </style>
+    </head>
+    <body>
+        <section class="container">
+        <h1>Animation de la couleur d'un élément par pourcentages</h1>
+        <p>
+            Votre objectif est cette fois de définir plusieurs étapes supplémentaires dans votre animation.
+        </p>
+
+        <div id="result">
+            <div id="animated_box">
+            </div>
+            <div id="animated_box2">
+            </div>
+            <div id="animated_box3">
+            </div>
+        </div>
+
+        <hr>
+        <h2>Comment faire</h2>
+        <p>
+            On est pas obligé d'utiliser forcément <code class="kw">from</code> et <code class="kw">to</code> pour créer une animation. </p>
+        <p>
+            Pour une animation plus complexe, on va privilégier l'utilisation de pourcentages.</p>
+            </p><code class="kw">0%</code> sera le départ de l'animation et <code class="kw">100%</code> l'arrivée finale.
+        </p>
+        <p>
+            Vous allez devoir modifier le CSS pour faire changer la couleur de fond de la div en passant par 5 étapes succesives&nbsp;: 
+            <ul>
+                <li><code>red</code></li>
+                <li><code>orange</code></li>
+                <li><code>yellow</code></li>
+                <li><code>green</code></li>
+                <li><code>blue</code></li>
+            </ul>
+        </p>
+        <hr>
+        <h3>Etape 1 : création de l'animation</h3>
+        <p>
+            créer une règle <code class="kf">@keyframes</code> en prenant l'exemple suivant&nbsp;:
+        </p>
+        <pre class="code">
+            <code class="css">
+            <span class="kf">@keyframes</span> <span class="pr">nom_de_votre_animation</span> {
+                <span class="kw">0%</span> {
+                    <span class="cm">/* Vos règles CSS de départ */</span>
+                }
+                <span class="kw">25%</span> {
+                    <span class="cm">/* Vos règles CSS à 25% de l'animation */</span>
+                }
+                <span class="cm">/* ... jusqu'à 100% */</span>
+            }
+            </code>
+        </pre>        
+            <hr>
+            <h3>Etape 2 : Attacher l'animation à la div <code class="sl">#animated_box</code></h3>
+            <p>Une fois définie votre règle CSS d'animation, c'est exactement comme précédemment, il suffit d'appliquer cette animation à votre div avec les propriétés <code class="pr">animation-name</code> & <code class="pr">animation-duration</code>.</p>
+            <hr>
+            <h2>Aller plus loin</h2>
+            <p>Essayez de créer d'autre divs avec des couleurs, des pourcentages et des délais différents.</p>
+        </section>
+    </body>
+</html>
