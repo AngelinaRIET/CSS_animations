@@ -16,3 +16,7 @@ exercice 7 - effet de vague : https://codepen.io/AngelinaRiet/pen/BaYKQBE
 exercice 8 - chrono (secondes et minutes) : https://codepen.io/AngelinaRiet/pen/VwQmoBY
 
 exercice 9 - animation 3D : https://codepen.io/AngelinaRiet/pen/abqBePr
+
+exercice 10 - animation icônes : https://codepen.io/AngelinaRiet/pen/xxYRvev
+
+exercice 11 : animation SVG : https://codepen.io/AngelinaRiet/pen/KKQaPPB
